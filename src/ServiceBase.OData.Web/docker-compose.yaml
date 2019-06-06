@@ -1,0 +1,17 @@
+version: "3.5"
+services:
+    sql01:
+        image: "postgres"
+        container_name: pg01
+        hostname: pg01
+        ports:
+            - 5432:5432
+        volumes:
+            - data:/var/lib/postgresql/data
+        networks:
+            - pg-net
+networks:
+  pg-net:
+  
+volumes:
+  data:

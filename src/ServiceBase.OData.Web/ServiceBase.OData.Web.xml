@@ -1,0 +1,138 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ServiceBase.OData.Web</name>
+    </assembly>
+    <members>
+        <member name="M:ServiceBase.OData.Web.Controllers.HeroesController.Post(ServiceBase.OData.Web.Models.NewHero)">
+            <summary>
+            (OData Queryable) Creates a new hero
+            </summary>
+            <param name="newHero"></param>
+        </member>
+        <member name="M:ServiceBase.OData.Web.Controllers.HeroesController.Get">
+            <summary>
+            (OData Queryable) Retrieves a list of heroes
+            </summary>
+        </member>
+        <member name="M:ServiceBase.OData.Web.Controllers.HeroesController.Get(System.Guid)">
+            <summary>
+            (OData Queryable) Retrieve a single hero
+            </summary>
+            <param name="key">The unique identifier for the hero</param>
+            <returns></returns>
+        </member>
+        <member name="M:ServiceBase.OData.Web.Controllers.HeroesController.Patch(System.Guid,ServiceBase.OData.Web.Models.NewHero)">
+            <summary>
+            (OData Queryable) Create or update a hero
+            </summary>
+            <param name="key">unique identifier for a hero</param>
+            <param name="updatedHero">updated hero information</param>
+            <returns></returns>
+        </member>
+        <member name="M:ServiceBase.OData.Web.Controllers.HeroesController.Put(System.Guid,ServiceBase.OData.Web.Models.NewHero)">
+            <summary>
+            (OData Queryable) Create or replace a hero
+            </summary>
+            <param name="key">unique identifier for a hero</param>
+            <param name="newOrUpdatedHero">hero to create or update</param>
+            <returns></returns>
+        </member>
+        <member name="M:ServiceBase.OData.Web.Controllers.HeroesController.Delete(System.Guid)">
+            <summary>
+            (OData Queryable) Delete a hero
+            </summary>
+            <param name="key">unique identifier for a hero</param>      
+            <returns></returns>
+        </member>
+        <member name="M:ServiceBase.OData.Web.Controllers.HeroesController.NamesLongerThan(System.Int32)">
+            <summary>
+            Returns the number of heroes that have names longer than the specified length
+            </summary>
+            <param name="length">value</param>
+        </member>
+        <member name="M:ServiceBase.OData.Web.Controllers.HeroesController.HivemindAttack(Microsoft.AspNet.OData.ODataActionParameters)">
+            <summary>
+            Attacks all heroes..... makes them mindwiped drones of a master psychic master
+            </summary>
+            <param name="parameters">Action parameters</param>
+            <returns></returns>
+        </member>
+        <member name="T:ServiceBase.OData.Web.Models.Hero">
+            <summary>
+            A hero
+            A hero may or may not have super powers (i.e. not all heroes are superheroes)
+            </summary>
+        </member>
+        <member name="P:ServiceBase.OData.Web.Models.Hero.Id">
+            <summary>
+            Hero primary identifier
+            </summary>
+        </member>
+        <member name="P:ServiceBase.OData.Web.Models.Hero.Name">
+            <summary>
+            The name of the hero
+            </summary>
+        </member>
+        <member name="T:ServiceBase.OData.Web.Models.NewHero">
+            <summary>
+            A hero to be saved
+            A hero may or may not have super powers (i.e. not all heroes are superheroes)
+            </summary>
+        </member>
+        <member name="P:ServiceBase.OData.Web.Models.NewHero.Name">
+            <summary>
+            The name of the hero
+            </summary>
+        </member>
+        <member name="T:ServiceBase.OData.Web.Configuration.AllConfigurations">
+            <summary>
+            Represents the model configuration for all API configurations, regardless of version
+            </summary>
+        </member>
+        <member name="M:ServiceBase.OData.Web.Configuration.AllConfigurations.Apply(Microsoft.AspNet.OData.Builder.ODataModelBuilder,Microsoft.AspNetCore.Mvc.ApiVersion)">
+            <summary>
+            Applies model configurations using the provided builder for the specified API version.
+            </summary>
+            <param name="builder">The <see cref="T:Microsoft.AspNet.OData.Builder.ODataModelBuilder">builder</see> used to apply configurations.</param>
+            <param name="apiVersion">The <see cref="T:Microsoft.AspNetCore.Mvc.ApiVersion">API version</see> associated with the <paramref name="builder"/>.</param>
+        </member>
+        <member name="T:ServiceBase.OData.Web.Configuration.ApiVersions">
+            <summary>
+            Helper class that lists the versions of the API
+            </summary>
+        </member>
+        <member name="T:ServiceBase.OData.Web.Configuration.ModelConfigurations.HeroModelConfiguration">
+            <summary>
+            OData model configuration for Heroes
+            </summary>
+        </member>
+        <member name="M:ServiceBase.OData.Web.Configuration.ModelConfigurations.HeroModelConfiguration.Apply(Microsoft.AspNet.OData.Builder.ODataModelBuilder,Microsoft.AspNetCore.Mvc.ApiVersion)">
+            <summary>
+            Applies model configurations using the provided builder for the specified API version.
+            </summary>
+            <param name="builder">The <see cref="T:Microsoft.AspNet.OData.Builder.ODataModelBuilder">builder</see> used to apply configurations.</param>
+            <param name="apiVersion">The <see cref="T:Microsoft.AspNetCore.Mvc.ApiVersion">API version</see> associated with the <paramref name="builder"/>.</param>
+        </member>
+        <member name="M:ServiceBase.OData.Web.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            ASPNETCORE ConfigureServices
+            </summary>
+            <param name="services">IServiceCollection</param>
+        </member>
+        <member name="T:ServiceBase.OData.Web.SwaggerDefaultValues">
+            <summary>
+            Represents the Swagger/Swashbuckle operation filter used to document the implicit API version parameter.
+            </summary>
+            <remarks>This <see cref="T:Swashbuckle.AspNetCore.SwaggerGen.IOperationFilter"/> is only required due to bugs in the <see cref="T:Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator"/>.
+            Once they are fixed and published, this class can be removed.</remarks>
+        </member>
+        <member name="M:ServiceBase.OData.Web.SwaggerDefaultValues.Apply(Swashbuckle.AspNetCore.Swagger.Operation,Swashbuckle.AspNetCore.SwaggerGen.OperationFilterContext)">
+            <summary>
+            Applies the filter to the specified operation using the given context.
+            </summary>
+            <param name="operation">The operation to apply the filter to.</param>
+            <param name="context">The current operation filter context.</param>
+        </member>
+    </members>
+</doc>
