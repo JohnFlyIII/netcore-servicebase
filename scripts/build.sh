@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
 scriptname=$(basename $0)
-repo_root="${SYSTEM_DEFAULTWORKINGDIRECTORY:-"$(dirname $0)/.."}"
+scriptpath=$(realpath $0)
+repo_root="${SYSTEM_DEFAULTWORKINGDIRECTORY:-"$(dirname ${scriptpath%/*})"}"
 
 function print_and_log {
   message="$@"
@@ -9,6 +10,10 @@ function print_and_log {
   printf "[$scriptname] $message\n"
 }
 
-cd $repo_root
-print_and_log "dotnet build $repo_root"
-dotnet build -c Release
+pushd $repo_root
+
+print_and_log "dotnet build with Release config"
+
+# builds
+dotnet build ./src/ServiceBase.OData.Web/ServiceBase.OData.Web.csproj -c Release
+

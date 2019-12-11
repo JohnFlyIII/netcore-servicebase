@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
 scriptname=$(basename $0)
-repo_root="${SYSTEM_DEFAULTWORKINGDIRECTORY:-"$(dirname $0)/.."}"
+scriptpath=$(realpath $0)
+repo_root="${SYSTEM_DEFAULTWORKINGDIRECTORY:-"$(dirname ${scriptpath%/*})"}"
 
 function print_and_log {
   message="$@"
@@ -9,7 +10,9 @@ function print_and_log {
   printf "[$scriptname] $message\n"
 }
 
-cd $repo_root
-print_and_log "dotnet clean $repo_root"
-dotnet clean -c Release
-find | grep -E "/dist$|/bin$|/obj$|/TestResults$" | xargs rm -rf
+pushd $repo_root
+
+print_and_log "dotnet clean Release builds"
+
+#list projects that need to be cleaned before builds
+dotnet clean -c Release ./src/ServiceBase.Odata.Web

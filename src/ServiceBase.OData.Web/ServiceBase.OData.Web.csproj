@@ -5,19 +5,14 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>F:\dev\sandbox\jfly-odata\src\ServiceBase.OData.Web\ServiceBase.OData.Web.xml</DocumentationFile>
+    <DocumentationFile>ServiceBase.OData.Web.xml</DocumentationFile>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+ <DocumentationFile>ServiceBase.OData.Web.xml</DocumentationFile>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Compile Remove="D\**" />
-    <Content Remove="D\**" />
-    <EmbeddedResource Remove="D\**" />
-    <None Remove="D\**" />
-  </ItemGroup>
 
   <ItemGroup>
     <None Remove="ServiceBase.OData.Web.xml" />
@@ -31,7 +26,7 @@
     <PackageReference Include="AutoMapper" Version="7.0.1" />
     <PackageReference Include="Flurl.Http" Version="2.4.0" />
     <PackageReference Include="GraphQL.Server.Transports.AspNetCore" Version="3.2.0" />
-    <PackageReference Include="Microsoft.AspNetCore.App" Version="2.1.4" />
+    <PackageReference Include="Microsoft.AspNetCore.App"/>
     <PackageReference Include="Microsoft.AspNetCore.OData" Version="7.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.OData.Versioning.ApiExplorer" Version="3.0.0-beta1" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
